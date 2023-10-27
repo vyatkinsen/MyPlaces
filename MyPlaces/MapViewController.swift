@@ -1,16 +1,9 @@
-//
-//  MapViewController.swift
-//  MyPlaces
-//
-//  Created by Арсений Вяткин on 27.10.2023.
-//
-
 import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
     
-    var place: Place!
+    var place = Place()
     let annotationIdentifier = "annotationIdentifier"
 
     @IBOutlet weak var mapView: MKMapView!
