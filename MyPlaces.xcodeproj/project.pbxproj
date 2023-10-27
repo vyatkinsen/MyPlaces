@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5950D1042AE2C9B100C70E0E /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950D1032AE2C9B100C70E0E /* RatingControl.swift */; };
 		59E994D62ADC2BFD00B4B0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E994D52ADC2BFD00B4B0FB /* AppDelegate.swift */; };
 		59E994D82ADC2BFD00B4B0FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E994D72ADC2BFD00B4B0FB /* SceneDelegate.swift */; };
 		59E994DD2ADC2BFD00B4B0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E994DB2ADC2BFD00B4B0FB /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		070FD5F9FF431D6B078C2817 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		5950D1032AE2C9B100C70E0E /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		59E994D22ADC2BFD00B4B0FB /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E994D52ADC2BFD00B4B0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E994D72ADC2BFD00B4B0FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +55,6 @@
 		59E994C92ADC2BFD00B4B0FB = {
 			isa = PBXGroup;
 			children = (
-				59E994F12ADD8F6500B4B0FB /* StorageManager.swift */,
 				59E994D42ADC2BFD00B4B0FB /* MyPlaces */,
 				59E994D32ADC2BFD00B4B0FB /* Products */,
 				E44187BBD02CE5FFAD671243 /* Pods */,
@@ -72,6 +73,7 @@
 		59E994D42ADC2BFD00B4B0FB /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				59E994F12ADD8F6500B4B0FB /* StorageManager.swift */,
 				59E994D52ADC2BFD00B4B0FB /* AppDelegate.swift */,
 				59E994D72ADC2BFD00B4B0FB /* SceneDelegate.swift */,
 				59E994DB2ADC2BFD00B4B0FB /* Main.storyboard */,
@@ -79,6 +81,7 @@
 				59E994E92ADC2FC200B4B0FB /* MainViewController.swift */,
 				59E994ED2ADC3F5800B4B0FB /* PlaceModel.swift */,
 				59E994EB2ADC3B8000B4B0FB /* CustomTableViewCell.swift */,
+				5950D1032AE2C9B100C70E0E /* RatingControl.swift */,
 				59E994DE2ADC2C0100B4B0FB /* Assets.xcassets */,
 				59E994E02ADC2C0100B4B0FB /* LaunchScreen.storyboard */,
 				59E994E32ADC2C0100B4B0FB /* Info.plist */,
@@ -133,7 +136,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					59E994D12ADC2BFD00B4B0FB = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -222,6 +225,7 @@
 				59E994F02ADC4D3E00B4B0FB /* NewPlaceViewController.swift in Sources */,
 				59E994D62ADC2BFD00B4B0FB /* AppDelegate.swift in Sources */,
 				59E994F22ADD8F6500B4B0FB /* StorageManager.swift in Sources */,
+				5950D1042AE2C9B100C70E0E /* RatingControl.swift in Sources */,
 				59E994EE2ADC3F5800B4B0FB /* PlaceModel.swift in Sources */,
 				59E994EC2ADC3B8000B4B0FB /* CustomTableViewCell.swift in Sources */,
 				59E994D82ADC2BFD00B4B0FB /* SceneDelegate.swift in Sources */,
@@ -286,6 +290,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -346,6 +351,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

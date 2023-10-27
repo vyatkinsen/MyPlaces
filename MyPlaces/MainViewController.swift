@@ -2,10 +2,12 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    // MARK: - Properties
     private var places: Results<Place>!
     private var filteredPlaces: Results<Place>!
     private var ascendingSorting = true
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
@@ -14,13 +16,29 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    private let searchController = UISearchController(searchResultsController: nil)
-    
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
     
+    // MARK: - Actions
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        sorting()
+    }
+    
+    @IBAction func reversenSorting(_ sender: Any) {
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reversedSortingButton.image = UIImage(named: "AZ")
+        } else {
+            reversedSortingButton.image = UIImage(named: "ZA")
+        }
+        sorting()
+    }
+    
+    // MARK: - View setup
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,36 +58,30 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationItem.hidesSearchBarWhenScrolling = true
     }
     
+
+    // MARK: - TableView functions
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltering {
-            return filteredPlaces.count
-        }
-        return places.isEmpty ? 0 : places.count
+        return isFiltering ? filteredPlaces.count : places.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-
-        var place = Place()
-        if isFiltering {
-            place = filteredPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
+        
+        let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
 
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
-
-        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.bounds.height / 2
-        cell.imageOfPlace?.clipsToBounds = true
-
+        cell.cosmosView.rating = place.rating
+        
         return cell
     }
     
-    // MARK: - TableView delegate
-
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let place = places[indexPath.row]
 
@@ -88,13 +100,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place =  filteredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
-            let newPlaceVC = segue.destination as! NewPlaceViewController 
+            let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
+
+            let newPlaceVC = segue.destination as! NewPlaceViewController
             newPlaceVC.currentPlace = place
         }
     }
@@ -106,26 +114,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
 
-    @IBAction func sortSelection(_ sender: UISegmentedControl) {
-        sorting()
-    }
-    @IBAction func reversenSorting(_ sender: Any) {
-        ascendingSorting.toggle()
-        
-        if ascendingSorting {
-            reversedSortingButton.image = UIImage(named: "AZ")
-        } else {
-            reversedSortingButton.image = UIImage(named: "ZA")
-        }
-        sorting()
-    }
-    
+    // MARK: - Sorting
     private func sorting() {
-        if segmentedControl.selectedSegmentIndex == 0 {
-            places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
-        } else {
-            places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
-        }
+        places = segmentedControl.selectedSegmentIndex == 0 ?
+                 places.sorted(byKeyPath: "date", ascending: ascendingSorting) :
+                 places.sorted(byKeyPath: "name", ascending: ascendingSorting)
         tableView.reloadData()
     }
 }
