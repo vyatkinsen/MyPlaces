@@ -11,7 +11,11 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapPinImage: UIImageView!
-    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var adressLabel: UILabel! {
+        didSet {
+            adressLabel.text = ""
+        }
+    }
     @IBOutlet weak var doneButton: UIButton! {
         didSet {
             doneButton.layer.cornerRadius = 10
@@ -133,6 +137,13 @@ class MapViewController: UIViewController {
             mapView.setRegion(region, animated: true)
         }
     }
+    
+    private func getCenterLocation(for mapView: MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
 
 }
 
@@ -152,6 +163,34 @@ extension MapViewController: MKMapViewDelegate {
             annotationView?.rightCalloutAccessoryView = imageView
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(center) { (placemarks, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            let placemark = placemarks.first
+            let streetName = placemark?.thoroughfare
+            let buildNumber = placemark?.subThoroughfare
+            
+            DispatchQueue.main.async {
+                switch (streetName, buildNumber) {
+                case (let street?, let number?):
+                    self.adressLabel.text = "\(street), \(number)"
+                case (let street?, nil):
+                    self.adressLabel.text = street
+                default:
+                    self.adressLabel.text = ""
+                }
+            }
+        }
     }
 }
 
