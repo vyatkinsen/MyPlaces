@@ -379,7 +379,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="HoR-X2-6eO">
-                                <rect key="frame" x="0.0" y="122" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="690"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -462,7 +462,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-EW-Zs0">
-                                <rect key="frame" x="0.0" y="91" width="390" height="32"/>
+                                <rect key="frame" x="0.0" y="781" width="390" height="30"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -475,10 +475,10 @@
                         <viewLayoutGuide key="safeArea" id="k45-Ux-kSG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kn7-EW-Zs0" firstAttribute="top" secondItem="k45-Ux-kSG" secondAttribute="top" id="A7a-eP-CZN"/>
-                            <constraint firstItem="kn7-EW-Zs0" firstAttribute="leading" secondItem="k45-Ux-kSG" secondAttribute="leading" id="JT1-QH-EjR"/>
-                            <constraint firstItem="kn7-EW-Zs0" firstAttribute="trailing" secondItem="k45-Ux-kSG" secondAttribute="trailing" id="OwE-92-dVG"/>
-                            <constraint firstItem="HoR-X2-6eO" firstAttribute="top" secondItem="kn7-EW-Zs0" secondAttribute="bottom" id="PnY-I0-DbD"/>
+                            <constraint firstItem="k45-Ux-kSG" firstAttribute="bottom" secondItem="kn7-EW-Zs0" secondAttribute="bottom" id="Fje-mm-Qom"/>
+                            <constraint firstItem="k45-Ux-kSG" firstAttribute="trailing" secondItem="kn7-EW-Zs0" secondAttribute="trailing" id="UuB-qk-bhN"/>
+                            <constraint firstItem="kn7-EW-Zs0" firstAttribute="top" secondItem="HoR-X2-6eO" secondAttribute="bottom" id="ehY-Jd-lia"/>
+                            <constraint firstItem="kn7-EW-Zs0" firstAttribute="leading" secondItem="k45-Ux-kSG" secondAttribute="leading" id="rbf-HC-RUI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="8Er-sL-VNy">
