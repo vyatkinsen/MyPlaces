@@ -289,7 +289,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-pc-2iU">
                                 <rect key="frame" x="323" y="750.66666666666663" width="49" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.branch" catalog="system" title=""/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.triangle.branch" catalog="system" title=""/>
                                 <connections>
                                     <action selector="goButtonPressed" destination="d1A-Hc-Xam" eventType="touchUpInside" id="GcR-Yx-Oad"/>
                                 </connections>
@@ -519,7 +519,7 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
-        <image name="arrow.branch" catalog="system" width="128" height="110"/>
+        <image name="arrow.triangle.branch" catalog="system" width="128" height="110"/>
         <image name="arrow.up.forward.and.arrow.down.backward" catalog="system" width="128" height="117"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
