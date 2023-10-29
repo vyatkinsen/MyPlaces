@@ -233,9 +233,21 @@
                                     <constraint firstAttribute="height" constant="30" id="udW-ga-uXt"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.down.right.and.arrow.up.left" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.up.forward.and.arrow.down.backward" catalog="system"/>
                                 <connections>
                                     <action selector="closeVC" destination="d1A-Hc-Xam" eventType="touchUpInside" id="Teb-TD-K8X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVw-bJ-WKg">
+                                <rect key="frame" x="324" y="786" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="DfE-fX-VzJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="vu7-SK-sv6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.fill" catalog="system" title="Button"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="d1A-Hc-Xam" eventType="touchUpInside" id="mL6-mT-JRf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -244,6 +256,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WQ7-MX-JMh" secondAttribute="bottom" id="2ar-GL-c66"/>
                             <constraint firstItem="WQ7-MX-JMh" firstAttribute="top" secondItem="ZPY-YM-LeK" secondAttribute="top" id="bc4-TV-gFE"/>
+                            <constraint firstItem="l3F-H4-Td1" firstAttribute="trailing" secondItem="yVw-bJ-WKg" secondAttribute="trailing" constant="16" id="bt4-HQ-9Jd"/>
+                            <constraint firstItem="l3F-H4-Td1" firstAttribute="bottom" secondItem="yVw-bJ-WKg" secondAttribute="bottom" constant="8" id="kT4-ab-odf"/>
                             <constraint firstItem="WQ7-MX-JMh" firstAttribute="trailing" secondItem="l3F-H4-Td1" secondAttribute="trailing" id="lYq-Xe-L8Z"/>
                             <constraint firstItem="Gr8-8e-6LD" firstAttribute="top" secondItem="l3F-H4-Td1" secondAttribute="top" constant="8" id="pDI-eQ-Rl2"/>
                             <constraint firstItem="Gr8-8e-6LD" firstAttribute="leading" secondItem="l3F-H4-Td1" secondAttribute="leading" constant="16" id="pWm-WT-dgS"/>
@@ -444,9 +458,10 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
-        <image name="arrow.down.right.and.arrow.up.left" catalog="system" width="128" height="117"/>
+        <image name="arrow.up.forward.and.arrow.down.backward" catalog="system" width="128" height="117"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="map" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
