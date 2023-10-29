@@ -124,7 +124,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="mappin.circle.fill" catalog="system" title=""/>
                                                     <connections>
-                                                        <segue destination="d1A-Hc-Xam" kind="presentation" identifier="getAdress" modalPresentationStyle="fullScreen" id="ClY-Ye-lB6"/>
+                                                        <segue destination="d1A-Hc-Xam" kind="presentation" identifier="getAddress" modalPresentationStyle="fullScreen" id="ClY-Ye-lB6"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -242,11 +242,7 @@
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gr8-8e-6LD">
-                                <rect key="frame" x="16" y="8" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="rgJ-bC-F2g"/>
-                                    <constraint firstAttribute="height" constant="30" id="udW-ga-uXt"/>
-                                </constraints>
+                                <rect key="frame" x="16.000000000000004" y="8" width="50.333333333333343" height="34.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.up.forward.and.arrow.down.backward" catalog="system"/>
                                 <connections>
@@ -267,11 +263,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br3-p4-v0s">
-                                <rect key="frame" x="89" y="788.66666666666663" width="212" height="35"/>
+                                <rect key="frame" x="95" y="800" width="200" height="36"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="212" id="Zuy-Wi-FK2"/>
-                                    <constraint firstAttribute="height" constant="35" id="cfF-Je-A3z"/>
+                                    <constraint firstAttribute="height" constant="36" id="0dj-jV-M5c"/>
+                                    <constraint firstAttribute="width" constant="200" id="Rc1-ll-C5f"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -279,36 +275,44 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="doneButtonPressedd" destination="d1A-Hc-Xam" eventType="touchUpInside" id="6m0-ss-I8J"/>
+                                    <action selector="doneButtonPressed" destination="d1A-Hc-Xam" eventType="touchUpInside" id="6m0-ss-I8J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVw-bJ-WKg">
-                                <rect key="frame" x="324" y="781" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="DfE-fX-VzJ"/>
-                                    <constraint firstAttribute="height" constant="50" id="vu7-SK-sv6"/>
-                                </constraints>
+                                <rect key="frame" x="322.66666666666669" y="801" width="49.333333333333314" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="location.fill" catalog="system" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.fill" catalog="system"/>
                                 <connections>
                                     <action selector="centerViewInUserLocation" destination="d1A-Hc-Xam" eventType="touchUpInside" id="mL6-mT-JRf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGu-pc-2iU">
+                                <rect key="frame" x="323" y="750.66666666666663" width="49" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.branch" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="d1A-Hc-Xam" eventType="touchUpInside" id="GcR-Yx-Oad"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l3F-H4-Td1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="l3F-H4-Td1" firstAttribute="bottom" secondItem="br3-p4-v0s" secondAttribute="bottom" constant="8" id="0ne-MO-qF8"/>
+                            <constraint firstItem="yVw-bJ-WKg" firstAttribute="top" secondItem="RGu-pc-2iU" secondAttribute="bottom" constant="16" id="1SL-ZU-kJH"/>
                             <constraint firstAttribute="bottom" secondItem="WQ7-MX-JMh" secondAttribute="bottom" id="2ar-GL-c66"/>
                             <constraint firstItem="br3-p4-v0s" firstAttribute="centerX" secondItem="WQ7-MX-JMh" secondAttribute="centerX" id="4uA-UR-vNw"/>
-                            <constraint firstItem="yVw-bJ-WKg" firstAttribute="leading" secondItem="WQ7-MX-JMh" secondAttribute="trailing" constant="-66" id="9JL-Ks-e4y"/>
+                            <constraint firstItem="l3F-H4-Td1" firstAttribute="trailing" secondItem="yVw-bJ-WKg" secondAttribute="trailing" constant="18" id="81B-qe-Eoy"/>
                             <constraint firstItem="eab-kZ-gbR" firstAttribute="centerX" secondItem="WQ7-MX-JMh" secondAttribute="centerX" id="G1L-WH-sJE"/>
+                            <constraint firstItem="RGu-pc-2iU" firstAttribute="centerX" secondItem="yVw-bJ-WKg" secondAttribute="centerX" id="K2g-ad-8gX"/>
                             <constraint firstItem="l3F-H4-Td1" firstAttribute="trailing" secondItem="eab-kZ-gbR" secondAttribute="trailing" constant="16" id="L0o-iW-tNc"/>
+                            <constraint firstItem="WQ7-MX-JMh" firstAttribute="leading" secondItem="Gr8-8e-6LD" secondAttribute="trailing" constant="-66.333333333333343" id="QxJ-XM-ZfQ"/>
                             <constraint firstItem="WQ7-MX-JMh" firstAttribute="top" secondItem="eab-kZ-gbR" secondAttribute="bottom" constant="-120" id="bOk-jt-kcI"/>
                             <constraint firstItem="WQ7-MX-JMh" firstAttribute="top" secondItem="ZPY-YM-LeK" secondAttribute="top" id="bc4-TV-gFE"/>
-                            <constraint firstItem="yVw-bJ-WKg" firstAttribute="centerY" secondItem="br3-p4-v0s" secondAttribute="centerY" id="brL-7N-KcK"/>
+                            <constraint firstItem="yVw-bJ-WKg" firstAttribute="centerY" secondItem="br3-p4-v0s" secondAttribute="centerY" id="kwY-ux-58y"/>
                             <constraint firstItem="HuO-4O-0SD" firstAttribute="centerX" secondItem="ZPY-YM-LeK" secondAttribute="centerX" id="kym-jR-nwq"/>
-                            <constraint firstItem="yVw-bJ-WKg" firstAttribute="top" secondItem="WQ7-MX-JMh" secondAttribute="bottom" constant="-63" id="lS3-vq-NLq"/>
                             <constraint firstItem="WQ7-MX-JMh" firstAttribute="trailing" secondItem="l3F-H4-Td1" secondAttribute="trailing" id="lYq-Xe-L8Z"/>
+                            <constraint firstItem="yVw-bJ-WKg" firstAttribute="leading" secondItem="br3-p4-v0s" secondAttribute="trailing" constant="27.666666666666686" id="oni-7u-2xM"/>
                             <constraint firstItem="Gr8-8e-6LD" firstAttribute="top" secondItem="l3F-H4-Td1" secondAttribute="top" constant="8" id="pDI-eQ-Rl2"/>
                             <constraint firstItem="Gr8-8e-6LD" firstAttribute="leading" secondItem="l3F-H4-Td1" secondAttribute="leading" constant="16" id="pWm-WT-dgS"/>
                             <constraint firstItem="WQ7-MX-JMh" firstAttribute="leading" secondItem="l3F-H4-Td1" secondAttribute="leading" id="tMR-2q-YEn"/>
@@ -317,8 +321,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="eab-kZ-gbR" id="x3G-B2-rW0"/>
+                        <outlet property="addressLabel" destination="eab-kZ-gbR" id="x3G-B2-rW0"/>
                         <outlet property="doneButton" destination="br3-p4-v0s" id="JP1-ng-Adb"/>
+                        <outlet property="goButton" destination="RGu-pc-2iU" id="lmC-Hu-M83"/>
                         <outlet property="mapPinImage" destination="HuO-4O-0SD" id="51P-Do-MRJ"/>
                         <outlet property="mapView" destination="WQ7-MX-JMh" id="lZb-pM-402"/>
                     </connections>
@@ -514,6 +519,7 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
+        <image name="arrow.branch" catalog="system" width="128" height="110"/>
         <image name="arrow.up.forward.and.arrow.down.backward" catalog="system" width="128" height="117"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
@@ -528,7 +534,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
